@@ -17,6 +17,17 @@ exports.saveBook = async (params) => {
     throw error;
   }
 };
+exports.saveCalendar = async (params) => {
+  try {
+    console.log(params);
+    const book = await Library.update(
+      { read_date: params.date },
+      { where: { book_isbn: params.isbn } }
+    );
+  } catch (error) {
+    throw error;
+  }
+};
 exports.deleteBook = async (id) => {
   try {
     console.log(id);

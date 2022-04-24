@@ -7,10 +7,13 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING(50),
         allowNull: false,
       },
+      book_author: {
+        field: "book_author",
+        type: DataTypes.STRING(50),
+      },
       book_thumbnail: {
         field: "book_thumbnail",
         type: DataTypes.STRING(200),
-        allowNull: false,
       },
       book_isbn: {
         field: "book_isbn",

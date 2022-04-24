@@ -19,5 +19,6 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 db.library = require("./library.model.js")(sequelize, DataTypes);
+db.report = require("./report.model.js")(sequelize, DataTypes);
 
 module.exports = db;

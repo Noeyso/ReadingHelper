@@ -16,6 +16,14 @@ exports.saveBook = async (req, res, next) => {
     return res.status(500).json(err);
   }
 };
+exports.saveCalendar = async (req, res, next) => {
+  try {
+    const result = await LibraryService.saveCalendar(req.body);
+    res.send("success");
+  } catch (err) {
+    return res.status(500).json(err);
+  }
+};
 exports.deleteBook = async (req, res, next) => {
   try {
     console.log(req.body.bookId);

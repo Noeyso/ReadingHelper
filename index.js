@@ -1,9 +1,14 @@
 const express = require("express");
 const app = express();
-const bodyParser = require("body-parser");
 const library = require("./src/library");
-const db = require("./src/models");
+const calendar = require("./src/calendar");
+const report = require("./src/report");
+const search = require("./src/search");
+
+const bodyParser = require("body-parser");
 const cors = require("cors");
+
+const db = require("./src/models");
 
 db.sequelize.sync();
 app.use(cors());
@@ -15,5 +20,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/library", library);
+app.use("/calendar", calendar);
+app.use("/report", report);
+app.use("/search", search);
 
 app.listen(8080, () => console.log(`Listening on port 8080`));
