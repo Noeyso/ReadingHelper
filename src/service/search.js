@@ -20,7 +20,9 @@ class Search {
   }
   async getEncodedUri(url) {
     try {
-      const response = await api.get("/search/thumbnail", { url });
+      const response = await api.get("/search/thumbnail", { params: { url } });
+      console.log(response);
+      return response;
     } catch (error) {
       console.error(error.response.data);
     }
