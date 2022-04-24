@@ -1,14 +1,23 @@
 .container {
-  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.calendar {
+  top: 50%;
+  width: 28rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.calendar {
-  width: 28rem;
-  height: 60rem;
-  display: flex;
-  flex-direction: column;
+.detail {
+  transform: translate(100%, 30%);
+}
+.modify {
+  width: 100%;
+  background-color: mainColor;
 }

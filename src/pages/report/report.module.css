@@ -1,17 +1,17 @@
-@value mainColor,mainTrans from "../../common/color.css";
+@value mainColor,mainTrans,makerGrey from "../../common/color.css";
 
 .container {
+  display: flex;
+  flex-direction: column;
   font-family: "CookieRun";
 }
 
-.title {
-  width: 100%;
+.list {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  background-color: mainTrans;
-  margin-bottom: 1rem;
 }
 
-.title {
+.add {
+  width: 3rem;
 }

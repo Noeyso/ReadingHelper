@@ -68,4 +68,11 @@ const register = (userInfo) => {
   });
 };
 
-export default { register, login, logout, getNaverUrl, getKakaoUrl, socialLogin };
+export default {
+  register,
+  login,
+  logout,
+  getNaverUrl,
+  getKakaoUrl,
+  socialLogin,
+};

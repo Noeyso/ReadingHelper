@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./day.module.css";
 
-const Day = ({ dayInfo }) => {
+const Day = ({ dayInfo, openDetail }) => {
   const { day, week, state, book } = dayInfo;
   return (
     <li className={styles.container}>
@@ -10,12 +10,13 @@ const Day = ({ dayInfo }) => {
       ) : (
         <p className={`${styles.day} ${styles.notDay}`}>{day}</p>
       )}
-      <div>
-        {book !== null && (
+      <div className={styles.thumbnailContainer}>
+        {book !== null && book !== undefined && (
           <img
             className={styles.thumbnail}
-            src={book.thumbnail}
+            src={book.book_thumbnail}
             alt="thumbnail"
+            onClick={() => openDetail(book, book.id)}
           />
         )}
       </div>

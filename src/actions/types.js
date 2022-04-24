@@ -13,5 +13,3 @@ export const WRITE_REPORT = "WRITE_REPORT";
 export const DONE_REPORT = "DONE_REPORT";
 export const SELECT_BOOK = "SELECT_BOOK";
 export const MAKE_QUESTION = "MAKE_QUESTION";
-
-export const PAGE_STATE = "PAGE_STATE";

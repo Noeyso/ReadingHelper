@@ -5,7 +5,7 @@ import styles from "./profileEdit.module.css";
 import BookList from "../../common/images/book_list.jpg";
 import GoodStamp from "../../common/images/good_stamp.png";
 import ThumbStamp from "../../common/images/thumb_stamp.PNG";
-import RoundButton from "../../components/common/buttons/round_button";
+import RoundButton from "../../components/common/buttons/roundButton";
 
 const ProfileEdit = (props) => {
   const { user: currentUser } = useSelector((state) => state.auth);
@@ -30,7 +30,12 @@ const ProfileEdit = (props) => {
       <form className={styles.form}>
         <div className={styles.item}>
           <span className={styles.inputTitle}>이름</span>
-          <input className={styles.input} type="text" value={currentUser.name} onChange={onChangeName} />
+          <input
+            className={styles.input}
+            type="text"
+            value={currentUser.name}
+            onChange={onChangeName}
+          />
         </div>
         <div className={styles.item}>
           <span className={styles.inputTitle}>이메일</span>
@@ -38,7 +43,11 @@ const ProfileEdit = (props) => {
         </div>
         <div className={styles.item}>
           <span className={styles.inputTitle}>비밀번호</span>
-          <input className={styles.input} type="password" onChange={onChangePassword} />
+          <input
+            className={styles.input}
+            type="password"
+            onChange={onChangePassword}
+          />
         </div>
       </form>
       <div

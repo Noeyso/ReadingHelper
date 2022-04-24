@@ -1,8 +1,8 @@
 import React from "react";
 
-const RoundButton = ({ backColor, textColor, text, onClick }) => {
+export const RoundButton = ({ backColor, textColor, text, onClick }) => {
   const styles = {
-    borderRadius: 10,
+    borderRadius: 5,
     padding: "0.5em",
     margin: "0.5em",
     cursor: "pointer",

@@ -1,4 +1,4 @@
-@value makerLightYellow,mainColor,makerBlack,makerPurple from "../../common/color.css";
+@value makerYellow,mainColor,mainPointColor,subColor,makerBlack,makerPurple from "../../common/color.css";
 
 .container {
   width: 100%;
@@ -20,7 +20,7 @@
   width: 90%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .logoImg {
@@ -63,8 +63,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 13rem;
-  margin-right: 20rem;
 }
 .menu {
   display: flex;
@@ -76,4 +74,47 @@
   text-decoration: none;
   color: makerBlack;
   margin-right: 3rem;
+}
+
+.search_container {
+  margin-right: 1.5rem;
+  position: relative;
+}
+
+.btn_search {
+  width: 3.125rem;
+  height: 3.125rem;
+  right: 0;
+  position: absolute;
+  padding: 0.2rem 0.3rem 0.2rem 0.2rem;
+  border-radius: 50%;
+  color: mainPointColor;
+  background-color: transparent;
+}
+
+.btn_search:focus ~ .input_search {
+  width: 15rem;
+  border-radius: 0;
+  background-color: transparent;
+  border-bottom: 2px solid mainColor;
+  transition: all 0.5s cubic-bezier(0, 0.11, 0.35, 2);
+}
+
+.input_search {
+  width: 3.125rem;
+  height: 3.125rem;
+  padding-left: 1rem;
+  padding-right: 3rem;
+  border-style: none;
+  border-radius: 1.5rem;
+  outline: none;
+  transition: all 0.5s ease-in-out;
+  background-color: white;
+}
+.input_search:focus {
+  width: 15rem;
+  border-radius: 0;
+  background-color: transparent;
+  border-bottom: 2px solid mainColor;
+  transition: all 0.5s cubic-bezier(0, 0.11, 0.35, 2);
 }

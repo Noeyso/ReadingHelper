@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
 import { useHistory } from "react-router";
-import styles from "./bookDetail.module.css";
-import thumbnailImg from "../../common/images/thumbnail.png";
+import styles from "./searchDetail.module.css";
+import thumbnailImg from "../../../common/images/thumbnail.png";
+import RoundButton from "../../../components/common/buttons/roundButton";
 
-const BookDetail = ({ library }) => {
+const SearchDetail = ({ library }) => {
   const history = useHistory();
   const historyState = history?.location?.state;
   console.log(historyState);
 
   const bookItem = historyState.book;
-  const state = historyState.state;
 
   const book =
     bookItem === undefined
@@ -18,8 +18,8 @@ const BookDetail = ({ library }) => {
   const { title, thumbnail, contents, authors, publisher, translators } = book;
 
   const thumbnail_img = thumbnail.length > 0 ? thumbnail : thumbnailImg;
-  const author = authors.length > 0 ? authors.join(", ") : "";
-  const translator = translators.length > 0 ? translators.join(", ") : "";
+  const author = authors.length > 0 ? authors.join(",") : "";
+  const translator = translators.length > 0 ? translators.join(",") : "";
 
   useEffect(() => {
     if (book.length) {
@@ -27,29 +27,20 @@ const BookDetail = ({ library }) => {
     }
   }, [book]);
 
-  const saveBook = async (readDate, state) => {
-    //const newBook = { ...book, readDate, memo:"" };
+  const saveBook = async () => {
     const isbn = book["isbn"].split(" ")[1];
     const newBook = {
       book_title: title,
+      book_author: author,
       book_thumbnail: thumbnail,
       book_isbn: isbn,
-      read_date: readDate,
+      read_date: null,
       memo: "",
       user_id: 1,
     };
 
     const res = await library.saveBook(newBook);
-    switch (state) {
-      case "library":
-        alert("내서재에 담겼습니다!");
-        break;
-      case "calendar":
-        alert("독서달력에 저장했습니다!");
-        break;
-      default:
-        break;
-    }
+    alert(" 저장했습니다!");
   };
 
   const goToReport = () => {
@@ -91,25 +82,11 @@ const BookDetail = ({ library }) => {
         </div>
       </div>
       <div className={styles.buttons}>
-        {state === "library" && (
-          <div>
-            <button onClick={() => saveBook(new Date(), "calendar")}>
-              다 읽었어요!
-            </button>
-            <button>독후감 작성</button>
-          </div>
-        )}
-        {state === "search" && (
-          <div>
-            <button onClick={() => saveBook(new Date(), "library")}>
-              내서재 담기
-            </button>
-            <button onClick={() => goToReport()}>독후감 작성</button>
-          </div>
-        )}
+        <RoundButton onClick={saveBook} text={"내서재에 저장"} />
+        <RoundButton onClick={goToReport} text={"독후감 작성"} />
       </div>
     </section>
   );
 };
 
-export default BookDetail;
+export default SearchDetail;

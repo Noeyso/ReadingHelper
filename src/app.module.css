@@ -1,3 +1,5 @@
+@value makerWhite,makerGrey from "./common/color.css";
+
 .container {
   display: flex;
   justify-content: center;

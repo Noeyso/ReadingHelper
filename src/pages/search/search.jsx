@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
-import BookCard from "../../components/common/bookCard/bookCard";
 import styles from "./search.module.css";
 import arrowRight from "../../common/images/arrow_right.png";
 import arrowLeft from "../../common/images/arrow_left.png";
-import BookList from "../../components/common/bookList/bookList";
+import SearchList from "../../components/search/searchList/searchList";
+import { useHistory } from "react-router";
 
 const SearchResult = ({ query, books, onSearch }) => {
   const [bookTitle, setBookTitle] = useState(query);
   const [booklist, setBookList] = useState(books);
   const [page, setPage] = useState(1);
-
   //새로고침 후에도 검색 결과를 유지
   useEffect(() => {
     console.log("한번");
@@ -53,7 +52,7 @@ const SearchResult = ({ query, books, onSearch }) => {
           <div>
             <h3>{`\'${bookTitle}\' 검색 결과`}</h3>
           </div>
-          <BookList books={booklist} state="search" />
+          <SearchList books={booklist} />
           <div className={styles.move_page}>
             <button className={styles.btn}>
               <img

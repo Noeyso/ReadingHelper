@@ -4,6 +4,7 @@ import arrowRight from "../../../common/images/arrow_right.png";
 import arrowLeft from "../../../common/images/arrow_left.png";
 
 const CalendarHeader = ({ moveMonth, YM }) => {
+  console.log(YM);
   return (
     <div className={styles.header}>
       <h2 className={`${styles.text} ${styles.year}`}>{YM.format("YYYY")}</h2>

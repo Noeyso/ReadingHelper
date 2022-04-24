@@ -1,3 +1,5 @@
+@value makerWhite,makerGrey from "./common/color.css";
+
 * {
   box-sizing: border-box;
 }
@@ -22,7 +24,8 @@ button {
   background: transparent;
   cursor: pointer;
 }
-h3 {
+
+h5 {
   margin: 0;
 }
 p {

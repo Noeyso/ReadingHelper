@@ -1,4 +1,4 @@
-@value makerYellow from "../../common/color.css";
+@value makerYellow from "../../../common/color.css";
 
 .container {
   height: 100%;

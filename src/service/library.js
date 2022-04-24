@@ -6,10 +6,6 @@ class Library {
     console.log(response.data);
     return response;
   }
-  async loadCalendar() {
-    const response = await axios.get("/calendar", { params: { id: 1 } });
-    return response;
-  }
   async saveBook(book) {
     console.log(book);
     try {
@@ -30,7 +26,17 @@ class Library {
       console.error(error.response.data);
     }
   }
-  async saveCalendar() {}
+  async saveCalendar(isbn, date) {
+    console.log(isbn);
+
+    try {
+      const response = await api.put("/library", { isbn, date });
+      console.log(response);
+      return response;
+    } catch (error) {
+      console.error(error.response.data);
+    }
+  }
 }
 
 export default Library;

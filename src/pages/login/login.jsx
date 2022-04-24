@@ -6,7 +6,7 @@ import LoginIcon from "../../common/images/login_character.jpeg";
 import KakaoIcon from "../../common/images/kakao_icon.png";
 import NaverIcon from "../../common/images/naver_icon.png";
 import styles from "./login.module.css";
-import RoundButton from "../../components/common/buttons/round_button";
+import RoundButton from "../../components/common/buttons/roundButton";
 import LoadSpinner from "../../components/common/loadSpinner/loadSpinner";
 
 function Login({ getLoginInfo }) {
@@ -81,7 +81,13 @@ function Login({ getLoginInfo }) {
           }}
           className={styles.form}
         >
-          <input className={styles.input} type="text" name="id" placeholder="아이디" onChange={onChangeUsername} />
+          <input
+            className={styles.input}
+            type="text"
+            name="id"
+            placeholder="아이디"
+            onChange={onChangeUsername}
+          />
           <input
             className={styles.input}
             type="password"

@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import styles from "./join.module.css";
-import RoundButton from "../../components/common/buttons/round_button";
+import RoundButton from "../../components/common/buttons/roundButton";
 import { register } from "../../actions/auth";
 
 const Join = () => {
