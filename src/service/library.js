@@ -10,8 +10,8 @@ class Library {
     console.log(book);
     try {
       const response = await api.post("/library", book);
-      console.log(response);
-      return response;
+      console.log(response.data);
+      return response.data;
     } catch (error) {
       console.error(error.response.data);
     }

@@ -13,6 +13,7 @@ import Report from "./service/report";
 import ImageFileInput from "./components/report/image_file_input/image_file_input";
 import ImageUploader from "./service/image_uploader";
 import Search from "./service/search";
+
 const calendar = new Calendar();
 const library = new Library();
 const report = new Report();

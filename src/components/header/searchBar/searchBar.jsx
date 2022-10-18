@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 import styles from "./searchBar.module.css";
 import searchIcon from "../../../common/images/search.png";
 
-const SearchBar = ({ onSearch, initBooks }) => {
+const SearchBar = ({ onSearch }) => {
   const inputRef = useRef();
   const history = useHistory();
   const [text, setText] = useState("");

@@ -1,13 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { useHistory } from "react-router";
-import { useSelector } from "react-redux";
-import Dots from "../../../common/images/dots.png";
-import Close from "../../../common/images/close.png";
 import styles from "./libraryCard.module.css";
 const LibraryCard = ({ book, isOpen, deleteBook, search, openAlert }) => {
   const history = useHistory();
   const { page } = history.location;
-  const [clicked, setClicked] = useState(false);
 
   const onClick = async () => {
     console.log(page);

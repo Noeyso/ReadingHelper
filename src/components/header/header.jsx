@@ -1,16 +1,15 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import RoundButton from "../common/buttons/roundButton";
 import styles from "./header.module.css";
-import SearchBar from "./searchBar/searchBar";
 import logoIcon from "../../common/images/logo-3.png";
 import myPage from "../../common/images/profile.png";
 import { logout } from "../../actions/auth";
 import { CgSearch } from "react-icons/cg";
 import { useHistory } from "react-router-dom";
 
-const Header = ({ onSearch, initBooks }) => {
+const Header = ({ onSearch }) => {
   const { user: currentUser } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const [isSearch, setIsSearch] = useState(false);

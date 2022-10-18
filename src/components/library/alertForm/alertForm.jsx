@@ -1,14 +1,11 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import styles from "./alertForm.module.css";
 import { IoClose } from "react-icons/io5";
 
 const AlertForm = ({ closeAlert, deleteBook, book, library }) => {
-  console.log(book);
   const history = useHistory();
   const saveCalendar = async () => {
-    //const isbn = book["isbn"].split(" ")[1];
-
     const res = await library.saveCalendar(book.book_isbn, new Date());
     alert("독서달력에 저장했습니다!");
   };

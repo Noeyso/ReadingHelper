@@ -3,7 +3,6 @@ import { useHistory } from "react-router";
 import styles from "./reportCard.module.css";
 import Dots from "../../../common/images/dots.png";
 import Close from "../../../common/images/close.png";
-import Trash from "../../../common/images/trash.png";
 
 const ReportCard = ({ report, openAlert }) => {
   const history = useHistory();

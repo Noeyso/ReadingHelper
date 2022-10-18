@@ -1,4 +1,4 @@
-@value mainColor,subColor,makerWhite,makerShadow,subPointColor,mainPointColor from "../../../common/color.css";
+@value mainColor,subColor from "../../../common/color.css";
 
 .container {
   width: 100%;

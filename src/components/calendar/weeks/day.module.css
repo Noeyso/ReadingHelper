@@ -1,4 +1,4 @@
-@value subColor,subPointColor,mainColor,mainPointColor,makerGrey,makerLightGrey from "../../../common/color.css";
+@value makerGrey,makerLightGrey from "../../../common/color.css";
 
 .container {
   width: 4rem;

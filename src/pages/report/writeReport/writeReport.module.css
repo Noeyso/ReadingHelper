@@ -1,4 +1,4 @@
-@value mainColor,subColor,makerWhite,makerLightGrey,makerGrey from "../../common/color.css";
+@value mainColor,makerLightGrey,makerGrey from "../../../common/color.css";
 
 .container {
   display: flex;

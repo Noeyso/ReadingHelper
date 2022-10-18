@@ -9,6 +9,7 @@ const SocialLogin = ({ type }) => {
   const url = new URL(window.location.href);
   // 인가 코드
   const authorizationCode = url.searchParams.get("code");
+  console.log(authorizationCode);
   // 네이버는 사이트 간 요청 위조 공격을 방지하기 위해 상태 토큰값에 URL 인코딩을 적용한 state를 백엔드에 꼭 넘겨주어야 함
   const state = url.searchParams.get("state") || "";
   const dispatch = useDispatch();
