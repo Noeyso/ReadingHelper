@@ -21,11 +21,11 @@ const SearchDetail = ({ library }) => {
   const author = authors.length > 0 ? authors.join(",") : "";
   const translator = translators.length > 0 ? translators.join(",") : "";
 
-  useEffect(() => {
-    if (book.length) {
-      localStorage.setItem("book", JSON.stringify(book));
-    }
-  }, [book]);
+  // useEffect(() => {
+  //   if (book.length) {
+  //     localStorage.setItem("book", JSON.stringify(book));
+  //   }
+  // }, [book]);
 
   const saveBook = async () => {
     const isbn = book["isbn"].split(" ")[1];
@@ -40,7 +40,12 @@ const SearchDetail = ({ library }) => {
     };
 
     const res = await library.saveBook(newBook);
-    alert(" 저장했습니다!");
+    console.log(res);
+    if (res) {
+      alert(" 저장했습니다!");
+    } else {
+      alert("이미 서재에 담겼습니다!");
+    }
   };
 
   const goToReport = () => {

@@ -1,7 +1,8 @@
 import React from "react";
 import { useHistory } from "react-router";
-import { useSelector } from "react-redux";
 import styles from "./searchCard.module.css";
+import thum from "../../../common/images/thum.png";
+
 const SearchCard = ({ book }) => {
   const history = useHistory();
   const { page } = history.location;
@@ -26,7 +27,7 @@ const SearchCard = ({ book }) => {
     <li className={styles.container} onClick={onClick}>
       <div className={styles.book}>
         <div className={styles.thumbnail}>
-          <img src={thumbnail} alt="thumbnail" />
+          <img src={thumbnail ? thumbnail : thum} alt="thumbnail" />
         </div>
         <h5>{title}</h5>
       </div>

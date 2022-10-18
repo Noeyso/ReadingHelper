@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./app.module.css";
 import { useHistory } from "react-router";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
@@ -13,7 +13,7 @@ import Join from "./pages/join/join";
 import Profile from "./pages/profile/profile";
 import ProfileEdit from "./pages/profile/profileEdit";
 import SocialLogin from "./components/socialLogin/socialLogin";
-import WriteReport from "./pages/writeReport/writeReport";
+import WriteReport from "./pages/report/writeReport/writeReport";
 import LibraryDetail from "./pages/library/libraryDetail/libraryDetail";
 import SearchDetail from "./pages/search/searchDetail/searchDetail";
 import ReportDetail from "./pages/report/reportDetail/reportDetail";
@@ -22,11 +22,6 @@ const App = ({ search, library, calendar, report, FileInput }) => {
   //검색어, 검색 결과 책들
   const [word, setWord] = useState("");
   const [books, setBooks] = useState([]);
-  const [page, setPage] = useState(0); //0:home,1:내서재,2:독후감,3:독서달력,4:마이페이지
-  const history = useHistory();
-  const initBooks = () => {
-    setBooks([]);
-  };
 
   const onSearch = async (query, page) => {
     setWord(query);
@@ -40,11 +35,7 @@ const App = ({ search, library, calendar, report, FileInput }) => {
   return (
     <div className={styles.container}>
       <BrowserRouter>
-        <Header
-          className={styles.header}
-          onSearch={onSearch}
-          initBooks={initBooks}
-        />
+        <Header className={styles.header} onSearch={onSearch} />
         <div className={styles.pages}>
           <Switch>
             <Route exact path="/">

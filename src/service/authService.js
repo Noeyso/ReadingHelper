@@ -1,5 +1,6 @@
 import axios from "axios";
-const API_URL = "http://localhost:8080/login/callback/";
+import api from "../api";
+const API_URL = "http://localhost:8080/user/auth";
 // 서버와 통신, API_URL + "필요한 동작"으로 이뤄진 url로 서버와 REST API 통신을 수행
 
 // 로그인: accessToken을 발급 받았다면 유저 정보를 localStorage에 "user"로 저장
@@ -19,14 +20,14 @@ const login = (userInfo) => {
 
 // 소셜 로그인: 로그인과 로직 동일
 const socialLogin = (type, params) => {
+  console.log(API_URL + type);
   return axios({
-    method: "POST",
-    url: API_URL + type,
-    params,
+    method: "GET",
+    url: "http://localhost:8080/user/auth/kakao/callback",
   }).then((response) => {
-    if (response.data.accessToken) {
-      localStorage.setItem("user", JSON.stringify(response.data));
-    }
+    // if (response.data.accessToken) {
+    //   localStorage.setItem("user", JSON.stringify(response.data));
+    // }
     console.log("response", response.data);
     return response.data;
   });
@@ -51,7 +52,10 @@ const getNaverUrl = () => {
 };
 
 const getKakaoUrl = () => {
-  window.location.href = process.env.REACT_APP_KAKAO_AUTH_URL;
+  //window.location.href = process.env.REACT_APP_KAKAO_AUTH_URL;
+  window.location.href = "http://localhost:8080/user/auth/kakao";
+  // const result = await api.get("/user/auth/kakao");
+  // console.log(result);
 };
 
 const register = (userInfo) => {

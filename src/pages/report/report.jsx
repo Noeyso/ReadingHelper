@@ -11,15 +11,26 @@ const Report = ({ report }) => {
   const history = useHistory();
 
   useEffect(() => {
-    const getBooks = async () => {
-      const response = await report.loadReport();
-      console.log(response);
-      const result = response.data;
-      console.log(result);
-      setBooks(result);
-    };
-    getBooks();
+    loadReports();
   }, []);
+
+  const loadReports = async () => {
+    const response = await report.loadReport();
+    const result = response.data;
+    setBooks(result);
+  };
+
+  const deleteReport = async (id) => {
+    await report.deleteReport(id);
+    loadReports();
+    alert("독후감이 삭제되었습니다!");
+  };
+  const goToWrite = () => {
+    history.push({
+      pathname: "/report/write",
+    });
+  };
+
   const openAlert = (id) => {
     setIsOpen(true);
     setReportId(id);
@@ -31,21 +42,6 @@ const Report = ({ report }) => {
     }
   };
 
-  const deleteReport = async (id) => {
-    console.log(typeof id);
-    await report.deleteReport(id);
-    const response = await report.loadReport();
-    console.log(response);
-    const result = response.data;
-    console.log(result);
-    setBooks(result);
-    alert("독후감이 삭제되었습니다!");
-  };
-  const goToWrite = () => {
-    history.push({
-      pathname: "/report/write",
-    });
-  };
   return (
     <div className={styles.container}>
       <ul className={styles.list}>

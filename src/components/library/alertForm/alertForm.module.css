@@ -1,4 +1,4 @@
-@value makerWhite,makerShadow,subPointColor,mainPointColor,makerLightGrey from "../../../common/color.css";
+@value makerWhite,makerLightGrey from "../../../common/color.css";
 
 .container {
   display: flex;

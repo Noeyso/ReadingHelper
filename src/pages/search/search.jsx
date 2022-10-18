@@ -3,21 +3,24 @@ import styles from "./search.module.css";
 import arrowRight from "../../common/images/arrow_right.png";
 import arrowLeft from "../../common/images/arrow_left.png";
 import SearchList from "../../components/search/searchList/searchList";
-import { useHistory } from "react-router";
 
 const SearchResult = ({ query, books, onSearch }) => {
   const [bookTitle, setBookTitle] = useState(query);
   const [booklist, setBookList] = useState(books);
   const [page, setPage] = useState(1);
+
   //새로고침 후에도 검색 결과를 유지
   useEffect(() => {
     console.log("한번");
     console.log(booklist);
+    console.log(books);
     if (!booklist.length) {
       console.log("들어옴");
+      console.log(JSON.parse(localStorage.getItem("books")));
       setBookList(JSON.parse(localStorage.getItem("books")));
       setBookTitle(JSON.parse(localStorage.getItem("query")));
       setPage(JSON.parse(localStorage.getItem("page")));
+      localStorage.setItem("books", JSON.stringify([]));
     }
   }, []);
 
@@ -52,7 +55,9 @@ const SearchResult = ({ query, books, onSearch }) => {
           <div>
             <h3>{`\'${bookTitle}\' 검색 결과`}</h3>
           </div>
-          <SearchList books={booklist} />
+          <div>
+            <SearchList books={booklist} />
+          </div>
           <div className={styles.move_page}>
             <button className={styles.btn}>
               <img

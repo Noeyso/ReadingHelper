@@ -1,17 +1,23 @@
 @value makerWhite,mainPointColor from "../../../common/color.css";
 
 .container {
-  width: 23%;
+  width: 10rem;
   cursor: pointer;
   margin: 0.5rem;
+  box-shadow: 1px 2px 6px 0px rgb(50 50 50 / 25%);
 }
 
 .book {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  cursor: pointer;
+  margin: 1rem;
 }
-
+.book h5 {
+  margin-top: 0.5rem;
+}
 .thumbnail {
   position: relative;
   width: 100%;
@@ -34,23 +40,5 @@
 }
 
 .thumbnail img {
-  display: block;
-}
-
-.thumbnail button {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -70%);
-  opacity: 0;
-}
-.thumbnail:hover button {
-  opacity: 1;
-}
-
-.button {
-  padding: 1rem;
-  color: makerWhite;
-  background-color: mainPointColor;
-  border-radius: 1rem;
+  width: 100%;
 }

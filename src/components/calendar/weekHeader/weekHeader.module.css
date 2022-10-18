@@ -1,4 +1,4 @@
-@value subColor,subPointColor,makerBlack,makerGrey from "../../../common/color.css";
+@value subColor from "../../../common/color.css";
 
 .weeks {
   display: flex;

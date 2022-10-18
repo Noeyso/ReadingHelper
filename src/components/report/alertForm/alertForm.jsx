@@ -1,6 +1,6 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import styles from "./alertForm.module.css";
-import Close from "../../../common/images/closeBlack.png";
+
 const AlertForm = ({ closeAlert }) => {
   return (
     <div className={styles.container}>

@@ -1,11 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from "./calendarDetail.module.css";
-import RoundButton from "../../common/buttons/roundButton";
 import HoverButton from "../../common/buttons/hoverButton/hoverButton";
 import Close from "../../../common/images/closeBlack.png";
 const CalendarDetail = ({ book, calendar, openDetail, library }) => {
   const inputRef = useRef();
-  console.log(book);
   const { id, book_title, book_thumbnail, book_isbn, memo } = book;
   const [isWrite, setIsWrite] = useState(false);
   const [calendarMemo, setCalendarMemo] = useState("");

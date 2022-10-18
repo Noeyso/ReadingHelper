@@ -1,14 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useHistory } from "react-router";
-import RoundButton from "../../components/common/buttons/roundButton";
+import RoundButton from "../../../components/common/buttons/roundButton";
 import styles from "./writeReport.module.css";
 import { BsBookFill, BsBook } from "react-icons/bs";
-import Thumbnail from "../../common/images/thum.png";
+import Thumbnail from "../../../common/images/thum.png";
 const WriteReport = ({ report, FileInput }) => {
   const history = useHistory();
   const inputRef = useRef();
   const startRef = useRef();
   const endRef = useRef();
+  const titleRef = useRef();
+  const bookRef = useRef();
+  const authorRef = useRef();
+  const contentRef = useRef();
   const historyState = history?.location?.state;
   const book = historyState !== undefined ? historyState.book : null;
   const ratings = [1, 2, 3, 4, 5];
@@ -39,15 +43,6 @@ const WriteReport = ({ report, FileInput }) => {
   const [isbn, setIsbn] = useState(
     book !== null ? (book.isbn !== undefined ? book.isbn : book.book_isbn) : ""
   );
-
-  const titleRef = useRef();
-  const bookRef = useRef();
-  const authorRef = useRef();
-  const contentRef = useRef();
-
-  useEffect(() => {
-    console.log(book);
-  }, []);
 
   const goToLibrary = () => {
     alert("Library");
