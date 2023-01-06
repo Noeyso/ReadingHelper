@@ -1,0 +1,36 @@
+.container {
+  width: 500px;
+  display: flex;
+  align-items: center;
+  border-radius: var(--f25);
+  border: 2px solid var(--default);
+}
+
+.form{
+  width:100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--f8) 0 var(--f8) var(--f20);
+}
+
+.input {
+  width:80%;
+  font-size: var(--f16);
+  font-family: 'IM_Hyemin-Bold';
+}
+.input:focus {
+  outline: 0;
+}
+.input::placeholder{
+  color : var(--puple-40);
+}
+
+.button {
+  width:20%;
+  margin: 0;
+}
+.button img {
+  width: var(--f34);
+}

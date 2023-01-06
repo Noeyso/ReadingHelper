@@ -1,0 +1,138 @@
+:root {
+  /*========== colors ==========*/
+  --default: var(--puple-80);
+  --deafault-text: var(--gray-90);
+
+  --blue-40: #868fd3; //페이징, 날짜 선택
+  --blue-60: #5880e7;
+  --blue-70: #0073ff;
+  --blue-80: #1b2ca2; //기본
+  --blue-8010: rgba(27, 44, 162, 0.1);
+  --blue-90: #091fa0; //진행상황
+
+  --puple-40: hsl(294, 24%, 53%);
+  --puple-80: #540375; //기본 
+
+  --lightGreen-50: #3ac8b4; //주소
+  --lightGreen-90: #00ffdc; //역할
+
+  --red-30: #ff97aa;
+  --red-50: #e5615d;
+
+  --gray-10: #f9fafb; //스케줄 추가
+  --gray-20: #f6f6f9; //씬 스트립
+  --gray-30: #d2d7dc; //테두리
+  --gray-50: #93969b; //미공유 스케줄
+  --gray-90: #353a43; //텍스트
+
+  --yellow-100: #ffbe17;
+
+  --orange-50: #FF7000;
+
+  --white: #ffffff;
+  --white-10: #f0f0f0;
+  --white-20: #f0f0fa; //선택된 항목, 날짜
+  --white-30: #e8eaed;
+  --black: #000000;
+
+  /*========== size ==========*/
+  --f1: 0.063rem;
+  --f2: 0.125rem;
+  --f3: 0.188rem;
+  --f4: 0.25rem;
+  --f5: 0.313rem;
+  --f6: 0.375rem;
+  --f7: 0.438rem;
+  --f8: 0.5rem;
+  --f9: 0.563rem;
+  --f10: 0.625rem;
+  --f12: 0.75rem;
+  --f14: 0.875rem;
+  --f16: 1rem;
+  --f18: 1.125rem;
+  --f19: 1.188rem;
+  --f20: 1.25rem;
+  --f24: 1.5rem;
+  --f25: 1.563rem;
+  --f26: 1.625rem;
+  --f28: 1.75rem;
+  --f30: 1.875rem;
+  --f32: 2rem;
+  --f34: 2.125rem;
+  --f36: 2.25rem;
+  --f37: 2.313rem;
+  --f40: 2.5rem;
+  --f50:3.125rem;
+}
+
+/*========== fonts ==========*/
+@font-face {
+  font-family: "Jejudoldam";
+  font-style: normal;
+  src: url("./common/font/jejudoldam.ttf");
+}
+
+@font-face {
+  font-family: "IM_Hyemin";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/IM_Hyemin-Regular.woff2")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IM_Hyemin-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/IM_Hyemin-Bold.woff2")
+    format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+* {
+  margin:0 auto;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+h5 {
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+
+input {
+  border: 0;
+}
+input:focus {
+  outline: 0;
+}
+
+

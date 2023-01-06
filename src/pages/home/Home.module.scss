@@ -1,0 +1,27 @@
+
+.search_bar{
+  margin-bottom: var(--f10);
+}
+.tokki{
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+.tokki_says{
+  max-width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  margin-top: 100px;
+}
+.tokki img{
+  width: 40%;
+  margin:0;
+}
+.tokki p{
+  width: 60%;
+  word-break:break-all;
+  font-family: 'IM_Hyemin-Bold';
+}

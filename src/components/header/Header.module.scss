@@ -1,0 +1,110 @@
+.container {
+  width: 100%;
+  margin: 0;
+  font-family: "IM_Hyemin-Bold";
+}
+
+.header_top {
+  height: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: var(--default);
+}
+.header_top li {
+  list-style: none;
+  margin: 0.5em;
+}
+.link {
+  text-decoration: none;
+}
+.link p {
+  font-size: 0.8rem;
+  color: var(--white-10);
+}
+
+.header {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.header_content{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap: 10px;
+}
+
+.logo {
+  font-family: "Jejudoldam";
+}
+.logo:active{
+  color: var(--orange-50);
+}
+
+.menu {
+  display: flex;
+  margin-top: var(--f20);
+}
+
+.item {
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+.item:hover{
+  color: var(--orange-50);
+}
+
+.header_search{
+  position:absolute;
+  right: 0;
+}
+.search_container {
+  margin-right: 1.5rem;
+  position: relative;
+}
+
+.btn_search {
+  width: 40px;
+  right: 0;
+  position: absolute;
+  padding: 0.2rem 0.3rem 0.2rem 0.2rem;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.btn_search img{
+  width:100%;
+}
+
+.btn_search:focus ~ .input_search {
+  width: 15rem;
+  border-radius: 0;
+  background-color: transparent;
+  border-bottom: 2px solid mainColor;
+  transition: all 0.5s cubic-bezier(0, 0.11, 0.35, 2);
+  
+}
+
+.input_search {
+  width: 3.125rem;
+  height: 3.125rem;
+  padding-left: 1rem;
+  padding-right: 3rem;
+  border-style: none;
+  border-radius: 1.5rem;
+  outline: none;
+  transition: all 0.5s ease-in-out;
+  background-color: white;
+  
+}
+.input_search:focus {
+  width: 15rem;
+  border-radius: 0;
+  background-color: transparent;
+  border-bottom: 2px solid mainColor;
+  transition: all 0.5s cubic-bezier(0, 0.11, 0.35, 2);
+}
