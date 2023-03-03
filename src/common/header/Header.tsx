@@ -5,53 +5,24 @@ import { useHistory } from 'react-router-dom';
 
 import search from '../../public/images/search.png'
 import { BsPersonCircle } from 'react-icons/bs';
+import { login,onLoginStateChange } from '../../slices/login';
+import { useAppDispatch, useAppSelector } from '../../hooks';
+import { loginGoogle, logoutGoogle, onUserStateChange } from '../../api/firebase';
 
 const Header = () => {
   //const { user: currentUser } = useSelector((state) => state.auth);
-  //const [isSearch, setIsSearch] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
-  const history = useHistory();
-  //const [text, setText] = useState("");
+  
+  const dispatch = useAppDispatch();
 
-  // const openSearch = () => {
-  //   setIsSearch(!isSearch);
-  // };
+  const {name} = useAppSelector(state=>state.loginReducer);
 
-  const goToSearch = () => {
-    history.push({
-      pathname: '/search',
-    });
-  };
+  React.useEffect(()=>{
+    onUserStateChange((user:any)=>{
+      dispatch(onLoginStateChange(user))
+    })
+  },[])
 
-  /*
-  const handleSearch = async () => {
-    const keyword = inputRef.current.value;
-    if (!keyword) {
-      alert("검색어를 입력하세요.");
-    } else {
-      // history.push({
-      //   pathname: "/search",
-      // });
-      setText("");
-      await onSearch(keyword, 1);
-    }
-  };
-  */
-
-  /*
-  const onClick = (event) => {
-    console.log(inputRef.current.value);
-    handleSearch();
-  };
-
-  const onKeyPress = (event) => {
-    console.log(event.key);
-    if (event.key === "Enter") {
-      event.preventDefault();
-      handleSearch();
-    }
-  };
-  */
   const searchWord = () => {
     console.log(inputRef.current!.value);
   };
@@ -60,7 +31,8 @@ const Header = () => {
     <header className={styles.container}>
       <ul className={styles.header_top}>
         <li><Link to="/profile"><BsPersonCircle color='white' /></Link></li>
-        <li><Link to="/login" className={styles.link}><p>로그인</p></Link></li>
+        {!name && <li onClick={loginGoogle}><p>로그인</p></li>}
+        {name&& <li onClick={logoutGoogle}><p>로그아웃</p></li>}
         <li><Link to="/join" className={styles.link}><p>회원가입</p></Link></li>
       </ul>
       <header className={styles.header}>
@@ -81,7 +53,7 @@ const Header = () => {
             <button className={styles.btn_search} onClick={searchWord}>
               <img src={search} alt='search'/>
             </button>
-            <input className={styles.input_search} ref={inputRef} type="text" placeholder="책 검색" onClick={goToSearch} />
+            <input className={styles.input_search} ref={inputRef} type="text" placeholder="책 검색" />
           </div>
         </div>
       </header>

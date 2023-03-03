@@ -1,5 +1,5 @@
 import { Book,SearchInfo } from "./search.d";
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export type SearchState={
@@ -42,7 +42,9 @@ export const searchBook = createAsyncThunk(
 export const search = createSlice({
   name: "search",
   initialState,
-  reducers: {},
+  reducers: {
+    increment: (state, action: PayloadAction<number>) => { return{...state,start:action.payload}},
+  },
   extraReducers: builder => {
     builder.addCase(searchBook.pending,(state,action)=>{
       return {...state,loading:true}

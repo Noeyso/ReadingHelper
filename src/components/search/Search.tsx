@@ -62,7 +62,7 @@ const SearchResult = () => {
       setLastNum(page);
     }
     setPage(page);
-    dispatch(searchBook({query,page}));
+    dispatch(searchBook({query,page})).then(()=>{});
   }
 
   const showSearchBar = ()=>{

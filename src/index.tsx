@@ -4,6 +4,7 @@ import App from "./App";
 
 import { Provider } from "react-redux";
 import { store } from "./store";
+import ModalWrapper from "./common/modal/ModalWrapper";
 
 // const imageUploader = new ImageUploader();
 // const FileInput = memo((props) => (
@@ -14,6 +15,7 @@ import { store } from "./store";
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
+      
       <App />
     </Provider>
   </React.StrictMode>,

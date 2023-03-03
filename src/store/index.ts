@@ -1,9 +1,13 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import searchReducer from "../slices/search";
+import loginReducer from "../slices/login";
+import modalReducer from "../slices/modal";
 
 const initialState = {};
 const rootReducer = combineReducers({ 
-  searchReducer: searchReducer 
+  searchReducer: searchReducer ,
+  loginReducer:loginReducer,
+  modalReducer: modalReducer,
 });
 
 export const store = configureStore({

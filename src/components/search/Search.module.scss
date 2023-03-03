@@ -138,17 +138,15 @@
   position:absolute;
   bottom:0;
   width:60%;
-  height: var(--f200);
+  height: var(--f160);
   background: var(--default);
   border-radius: var(--f80) var(--f80) 0 0;
-}
-.controls{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  
 }
+
 
 .controls div{
   width:33.3%;
@@ -157,7 +155,7 @@
   justify-content: center;
   align-items: center;
   color: var(--orange-50);
-  font-size: var(--f30);
+  font-size: var(--f26);
   font-family: 'IM_Hyemin-Bold';
   cursor: pointer;
 }

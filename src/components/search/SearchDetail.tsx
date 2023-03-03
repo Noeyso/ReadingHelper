@@ -2,8 +2,13 @@ import React from "react";
 import { useLocation } from "react-router";
 import styles from "./Search.module.scss";
 import { Book } from "../../slices/search.d";
+import { useAppDispatch } from "../../hooks";
+import { openModal } from "../../slices/modal";
+import { ModalTypes } from "../../common/modal/Modal";
 
 const SearchDetail = () => {
+
+  const dispatch = useAppDispatch();
 
   const loc = useLocation<{book:Book}>();
   const {book} = loc.state;
@@ -48,6 +53,17 @@ const SearchDetail = () => {
   };
   */
 
+  const writeReport = ()=>{
+    dispatch(openModal({
+      type:ModalTypes.Confirm,
+      props:{
+        text:'독후감을 작성하시겠어요?',
+        confirmBtnText:'네',
+        cancelBtnText:'아니오',
+      }
+    }))
+  }
+
   const showMoreContent = ()=>{
     setIsShowMore(false);
   }
@@ -72,7 +88,7 @@ const SearchDetail = () => {
       <div className={styles.controls}>
         <div>다 읽었어요</div>
         <div>읽을거에요</div>
-        <div>기록할래요</div>
+        <div onClick={writeReport}>기록할래요</div>
       </div>
       
     </section>
